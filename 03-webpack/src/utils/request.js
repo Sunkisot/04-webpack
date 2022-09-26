@@ -1,0 +1,89 @@
+import axios from 'axios'
+import { Notification, MessageBox, Message } from 'element-ui'
+import store from '@/store'
+import { getToken } from '@/utils/token'
+var shadeNum = 0
+axios.defaults.headers['Content-Type'] = 'application/json;charset=utf-8'
+// 创建axios实例
+console.log(process.env.VUE_APP_BASE_API)
+const service = axios.create({
+  // axios中请求配置有baseURL选项，表示请求URL公共部分
+  baseURL: process.env.VUE_APP_BASE_API,
+  // 超时
+  timeout: 50000
+})
+// request拦截器
+service.interceptors.request.use(
+  config => {
+
+    if (getToken()) {
+      config.headers['Authorization'] = 'Bearer ' + getToken() // 让每个请求携带自定义token 请根据实际情况自行修改
+    }
+    var shade = config.shade === undefined ? true : config.shade
+    if (!!shade && typeof store.dispatch === 'function') {
+      store.dispatch('app/SetLoading', true)
+      shadeNum++
+    }
+    return config
+  },
+  error => Promise.reject(error)
+)
+
+// // 响应拦截器
+service.interceptors.response.use(res => {
+  const code = res.data.code
+
+  var shade = res.config.shade == undefined ? true : res.config.shade
+  if (!!shade && typeof store.dispatch === 'function') {
+    if (shadeNum > 0) {
+      shadeNum--
+    }
+    if (shadeNum === 0) {
+      store.dispatch('app/SetLoading', false)
+    }
+  }
+  if (code === 'B0101') {
+    if (getToken()) {
+      MessageBox.confirm(
+        '登录状态已过期，您可以继续留在该页面，或者重新登录',
+        '系统提示',
+        {
+          confirmButtonText: '重新登录',
+          cancelButtonText: '取消',
+          type: 'warning'
+        }
+      ).then(() => {
+        store.dispatch('user/ErrLogout').then(() => {
+          location.reload() // 为了重新实例化vue-router对象 避免bug
+        })
+      })
+    }
+  } else if (code === '00000' || code.startsWith('B')) {
+    return res.data
+  } else {
+    Notification.error({
+      title: res.data.message
+    })
+    return Promise.reject('error')
+  }
+},
+  error => {
+    var shade = error.config.shade == undefined ? true : error.config.shade
+    if (!!shade && typeof store.dispatch === 'function') {
+      if (shadeNum > 0) {
+        shadeNum--
+      }
+      if (shadeNum === 0) {
+        store.dispatch('app/SetLoading', false)
+      }
+    }
+    Message({
+      message: error,
+      type: 'error',
+      duration: 5 * 1000
+    })
+    return Promise.reject(error)
+  }
+)
+
+export default service

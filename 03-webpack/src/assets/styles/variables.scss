@@ -1,0 +1,47 @@
+$primary: var(--primary, #1890ff);
+// base color
+$green:var(--success, #13ce66);
+$yellow:var(--warning, #FFBA00);
+$red:var(--danger, #ff4949) ;
+$blue:#324157;
+$light-blue:#3A71A8;
+$pink: #E65D6E;
+$tiffany: #4AB7BD;
+$panGreen: #30B08F;
+
+// sidebar
+$menuText:#fff; // 菜单文字颜色（旧）
+$menuActiveText:#409EFF;
+$subMenuActiveText:#fff; // https://github.com/ElemeFE/element/issues/12951
+
+$menuBg: rgba(0, 0, 0, 0);  //菜单背景颜色（旧）
+$menuHover:rgba(0, 0, 0, 0); // 菜单hover的背景色（旧）
+
+$subMenuBg: rgba(0, 0, 0, 0);
+$subMenuHover:#001528;
+
+$nestMenuBg: #fff; // 浮动菜单背景颜色
+$nestMenuText: #9CA9BD; // 浮动菜单文字颜色
+$nestMenuActiveText: #409EFF; //浮动菜单文字选中颜色
+$nestMenuHover: #FAFAFA; //浮动菜单文字hover颜色
+$sideBarWidth: 200px;
+
+// the :export directive is the magic sauce for webpack
+// https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
+:export {
+  menuText: $menuText;
+  menuActiveText: $menuActiveText;
+  subMenuActiveText: $subMenuActiveText;
+  menuBg: $menuBg;
+  menuHover: $menuHover;
+  subMenuBg: $subMenuBg;
+  subMenuHover: $subMenuHover;
+  sideBarWidth: $sideBarWidth;
+  nestMenuBg: $nestMenuBg;
+  nestMenuText: $nestMenuText;
+  nestMenuActiveText: $nestMenuActiveText;
+  nestMenuHover: $nestMenuHover;
+  red: $red;
+  green: $green;
+  yellow: $yellow;
+}

@@ -1,0 +1,307 @@
+ /**
+ * 通用css样式布局处理
+ * Copyright (c) 2019 rainy
+ */
+
+ /** 基础通用 **/
+.pt5 {
+	padding-top: 5px;
+}
+.pr5 {
+	padding-right: 5px;
+}
+.pb5 {
+	padding-bottom: 5px;
+}
+.pl20 {
+	padding-left: 20px;
+}
+.pd10 {
+	padding: 10px;
+	padding-top: 0;
+}
+.pd20 {
+	padding: 20px;
+	padding-top: 0;
+}
+.mt5 {
+	margin-top: 5px;
+}
+.mr5 {
+	margin-right: 5px;
+}
+.mb5 {
+	margin-bottom: 5px;
+}
+.mt7 {
+	margin-top: 7px;
+}
+.mt8 {
+	margin-top: 8px;
+}
+.mb8 {
+	margin-bottom: 8px;
+}
+.ml5 {
+	margin-left: 5px;
+}
+.mt10 {
+	margin-top: 10px;
+}
+.mr10 {
+	margin-right: 10px;
+}
+.mb10 {
+	margin-bottom: 10px;
+}
+.ml10 {
+	margin-left: 10px;
+}
+.mt20 {
+	margin-top: 20px;
+}
+.mr20 {
+	margin-right: 20px;
+}
+.mb20 {
+	margin-bottom: 20px;
+}
+.ml20 {
+	margin-left: 20px;
+}
+
+.el-dialog {
+	margin-top: 6vh !important;
+}
+
+.el-table .el-table__header-wrapper th {
+	word-break: break-word;
+	background-color: #f8f8f9;
+	color: #515a6e;
+	height: 40px;
+	font-size: 13px;
+}
+
+/** 表单布局 **/
+.form-header {
+  font-size:15px;
+	color:#6379bb;
+	border-bottom:1px solid #ddd;
+	margin:8px 10px 25px 10px;
+	padding-bottom:5px
+}
+
+/** 表格布局 **/
+.pagination-container {
+	position: relative;
+	height: 25px;
+	margin-bottom: 10px;
+	margin-top: 15px;
+	padding: 10px 20px !important;
+}
+
+.pagination-container .el-pagination {
+	right: 0;
+	position: absolute;
+}
+
+.el-table .fixed-width .el-button--mini {
+	color: #409EFF;
+	padding-left: 0;
+	padding-right: 0;
+	width: inherit;
+}
+
+.el-tree-node__content > .el-checkbox {
+	margin-right: 8px;
+}
+
+.list-group-striped > .list-group-item {
+	border-left: 0;
+	border-right: 0;
+	border-radius: 0;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.list-group {
+	padding-left: 0px;
+	list-style: none;
+}
+
+.list-group-item {
+	border-bottom: 1px solid #e7eaec;
+	border-top: 1px solid #e7eaec;
+	margin-bottom: -1px;
+	padding: 11px 0px;
+	font-size: 13px;
+}
+
+.pull-right {
+	float: right !important;
+}
+
+.el-card__header {
+	padding: 14px 15px 7px;
+	min-height: 40px;
+}
+
+.el-card__body {
+	padding: 15px 20px 20px 20px;
+}
+
+.card-box {
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-bottom: 10px;
+}
+  
+/* text color */
+.text-navy {
+	color: #1ab394;
+}
+
+.text-primary {
+	color: inherit;
+}
+
+.text-success {
+	color: #1c84c6;
+}
+
+.text-info {
+	color: #23c6c8;
+}
+
+.text-warning {
+	color: #f8ac59;
+}
+
+.text-danger {
+	color: #ed5565;
+}
+
+.text-muted {
+	color: #888888;
+}
+
+/* image */
+.img-circle {
+	border-radius: 50%;
+}
+
+.img-lg {
+	width: 120px;
+	height: 120px;
+}
+
+.avatar-upload-preview {
+	position: absolute;
+	top: 50%;
+	transform: translate(50%, -50%);
+	width: 180px;
+	height: 180px;
+	border-radius: 50%;
+	box-shadow: 0 0 4px #ccc;
+	overflow: hidden;
+}
+/*font-size*/
+.f-12 {
+	font-size: 12px;
+}
+.f-14 {
+	font-size: 14px;
+}
+.f-16 {
+	font-size: 16px;
+}
+.f-18 {
+	font-size: 18px;
+}
+.f-20 {
+	font-size: 20px;
+}
+.f-400 {
+	font-weight: 400;
+}
+.f-500 {
+	font-weight: 500;
+}
+
+.f-600{
+	font-weight: 600;
+}
+// color
+.c-000 {
+	color: #000;
+}
+.c-7F7F7F  {
+	color: #7F7F7F;
+}
+// 文字隐藏
+.t-one {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1; 
+}
+.t-two {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2; 
+}
+// 鼠标指针
+.m-p {
+	cursor: pointer;
+}
+/*flex*/
+.flex {
+	display: flex;
+}
+
+.basic-flex {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.flex-align-center {
+	display: flex;
+	align-items: center;
+}
+
+.flex-end {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+.flex-col {
+	display: flex;
+	flex-direction: column;
+}
+.p-relative {
+	position: relative;
+}
+.form_body {
+	flex: 1;
+	overflow: auto;
+}
+.bottom_btn_row {
+  width: 100%;
+  margin: 0 auto;
+  height: 50px;
+  overflow: hidden;
+  text-align: center;
+  background-color: #f2f2f4;
+  border: 1px solid #dfe6ec;
+  padding: 5px;
+}

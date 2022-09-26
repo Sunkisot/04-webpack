@@ -1,0 +1,2 @@
+/*! 我真牛掰！ */
+(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{327:function(o,n,c){},329:function(o,n,c){"use strict";c.r(n),function(o){c(327);console.log("other"),console.log(o)}.call(this,c(49))}}]);
